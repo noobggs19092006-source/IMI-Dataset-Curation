@@ -1,0 +1,58 @@
+--- Step 1: Generating Bounded Polymers ---
+Generated 720 unique polymer SMILES records.
+
+--- Step 2: Extracting PolyBERT Features (Full Dimension Pipeline) ---
+
+--- Step 3: Computing Structural, Physical, and Morgan Features ---
+Processing (200/720)...
+Processing (400/720)...
+Processing (600/720)...
+
+--- Step 4: Assembling Raw Final Dataset (Leak Free) ---
+
+Dimensions: 720 Polymers x 1784 Extracted Features
+Dataset securely saved as ready_polymer_dataset.csv
+Loading raw transformed pipeline matrices...
+Partitioning Train/Test Isolation Boundaries...
+Spinning up zero-leak Preprocessing ColumnTransformer...
+Establishing MLPRegressor Deep Learning Pipeline...
+Fitting model strictly over training sets...
+Traceback (most recent call last):
+  File "C:\Users\aryan\.gemini\antigravity\scratch\polymer_design\Friend_Eb_Project\code_7_train_model.py", line 91, in <module>
+    main()
+  File "C:\Users\aryan\.gemini\antigravity\scratch\polymer_design\Friend_Eb_Project\code_7_train_model.py", line 58, in main
+    pipeline.fit(X_train, y_train)
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\pipeline.py", line 663, in fit
+    self._final_estimator.fit(Xt, y, **last_step_params["fit"])
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 849, in fit
+    return self._fit(X, y, sample_weight=sample_weight, incremental=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 473, in _fit
+    X, y = self._validate_input(X, y, incremental, reset=first_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py", line 1760, in _validate_input
+    X, y = validate_data(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 2971, in validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 1368, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 1105, in check_array
+    _assert_all_finite(
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 120, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\utils\validation.py", line 169, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input X contains NaN.
+MLPRegressor does not accept missing values encoded as NaN natively. For supervised learning, you might want to consider sklearn.ensemble.HistGradientBoostingClassifier and Regressor which accept missing values encoded as NaNs natively. Alternatively, it is possible to preprocess the data, for instance by using an imputer transformer in a pipeline or drop samples with missing values. See https://scikit-learn.org/stable/modules/impute.html You can find a list of all estimators that handle NaN values at the following page: https://scikit-learn.org/stable/modules/impute.html#estimators-that-handle-nan-values
+Loading Core MLP Mathematical Pipeline Models...
+Error Mapping Core Dependency Files: [Errno 2] No such file or directory: 'mlp_pipeline.pkl'
+Please ensure you have generated dataset and run code_7.

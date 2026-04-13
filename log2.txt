@@ -1,0 +1,46 @@
+--- Step 1: Generating Bounded Polymers ---
+Generated 720 unique polymer SMILES records.
+
+--- Step 2: Extracting PolyBERT Features (Full Dimension Pipeline) ---
+
+--- Step 3: Computing Structural, Physical, and Morgan Features ---
+Processing (200/720)...
+Processing (400/720)...
+Processing (600/720)...
+
+--- Step 4: Assembling Raw Final Dataset (Leak Free) ---
+
+Dimensions: 720 Polymers x 1784 Extracted Features
+Dataset securely saved as ready_polymer_dataset.csv
+C:\Users\aryan\AppData\Local\Programs\Python\Python311\Lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:781: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (200) reached and the optimization hasn't converged yet.
+  warnings.warn(
+Loading raw transformed pipeline matrices...
+Partitioning Train/Test Isolation Boundaries...
+Spinning up zero-leak Preprocessing ColumnTransformer...
+Establishing MLPRegressor Deep Learning Pipeline...
+Fitting model strictly over training sets...
+Validating model across test set margins...
+
+--- EVALUATION BENCHMARKS ---
+
+Test Set R-Squared (R▓): 0.7453
+Test Set MAE Margin:     30.75 MV/m
+Test Set RMSE Margin:    39.18 MV/m
+
+Model serialized to 'mlp_pipeline.pkl'
+Mapped visual evaluation scatter plot efficiently mapped: eb_predictions.png
+Loading Core MLP Mathematical Pipeline Models...
+Isolating Test Case Polymer for Baseline Bounds Injection...
+Optimizing Base Polymer: CC(F)(C(F)(F)F)CC(F)(I)
+Goal: Morph bounds to hit Dielectric Strength of 700.0 MV/m
+
+========================================
+=== DIELECTRIC DESIGN OPTIMIZATION VALIDATED ===
+========================================
+SMILES Base Molecule: -> CC(F)(C(F)(F)F)CC(F)(I)
+
+Calculus Gradients Successfully Reached Local Minimum!
+Optimal Processing Temperature: 300.00 ░C
+Optimal Crystallinity Fraction: 0.9000
+Estimated Machine Learning Output: -> 441.36 MV/m (Target: 700.0)
+Absolute Margin Error: 258.64 MV/m
